@@ -5,8 +5,19 @@
 h2{
     color: green;
 }
-
+*/
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
-}*/
+    color: white;
+}
+
+.colorUno {
+    background: white;
+    color: blue;
+}
+
+footer{
+
+    color: white;
+}
