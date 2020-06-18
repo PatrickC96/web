@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <title>Mi web</title>
 </head>
 
@@ -11,35 +21,47 @@
     <!--Encabezado-->
     <h1>Mi WEB</h1>
 
-    <ul>
-        <li><a href="index.html" title="Inicio">Inicio</a></li>
-        <li><a href="contenidos.html" title="Contenido" target="_blank">Contenido</a></li>
-        <li><a href="contacto.html" title="Contacto" target="_blank">Contacto</a></li>
-        <li><a href="http://fis.epn.edu.ec" title="Fis" target="_blank">Fis</a></li>
-    </ul>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html" title="Inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="contenidos.html" title="Contenido"
+                    target="_blank">Contenido</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html" title="Contacto">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="http://fis.epn.edu.ec" title="Fis" target="_blank">Fis</a>
+            </li>
+        </ul>
+    </nav>
+
+
     <hr>
-    <h2>Nombre</h2>
-    <form >
-        <p>
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" placeholder="Escribe tu nombre"> 
-        </p>
-        <p>
-            <label for="biografia">Biografia</label>
-            <textarea type="text" name="biografia" ></textarea> 
-        </p>
-        <p>
-            <label for="edad">Edad</label>
-            <select name="edad" id="">
-                <option value="mayor">Mayor de edad:</option>
-                <option value="adulto">Adulto</option>
-                <option value="adultoMayor">MAyor de 65</option>
-            </select>
-        </p>
-        <p>
-            <input type="submit" value="Enviar Correo" name="" id="">
-        </p>
-    </form>
+    <h2 class="text-center text-uppercase bg-dark text-light">Formulario</h2>
+    <div class="container border">
+        <form>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="Ingrese el Nombre" class="form-control" required>
+            </div>
+             <div>
+                <label for="biografia">Biografia</label>
+                <br>
+                <textarea placeholder="Escriba un biografia" name="" id="biografia" cols="30" rows="10"
+                    class="form-control"></textarea>
+            </div>
+            <div>
+                <label for="edad">Edad</label>
+                <select name="" id="opcion" class="form-control" aria-placeholder="null">
+                    <option value="mayor">Mayor de edad:</option>
+                    <option value="adulto">Adulto</option>
+                    <option value="adultoMayor">Mayor de 65</option>
+                </select>
+            </div>
+            <div>
+                <input class="form-control btn-block" type="submit" value="Enviar Correo" name="" id="">
+            </div>
+        </form>
+    </div>
 
 </body>
 <footer>
