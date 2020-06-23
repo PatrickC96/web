@@ -7,7 +7,7 @@ Que nos diga si un numero es par o impar.
 do{
     var numero = Number( prompt("Digite el número: ",0))
     var texto  = ""
-    if(numero>0){
+    if(numero>=0){
             if(numero%0==0){
                 alert("El nuemero es par")
             }else{

@@ -1,11 +1,9 @@
-//'use strit'
-
 /*
-Programa que pida dos numeros y que nos diga cual es el mayor, 
+1. Programa que pida dos numeros y que nos diga cual es el mayor, 
 el menor y si son iguales. PLUS: Si los numeros no son un 
 numero o son menores o iguales a cero, nos los vuelva a pedir.(ready)
 */
-
+'use strict'
 var estado = true
 do{
     var numero1 = Number( prompt("Digite el primer numero: ",1))
