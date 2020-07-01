@@ -43,3 +43,26 @@ for( valor in todosLosDivs){
 }
 
 seccion.append(hr)
+
+var divsRojos=document.getElementsByClassName('rojo')
+var divsAmarillos = document.getElementsByClassName('amarillo')
+
+print(divsRojos)
+print(divsAmarillos)
+//para modificar los nombres de las clases
+divsAmarillos[0].style.background="yellow"
+var div
+for(div in divsRojos){
+    if(divsRojos[div].className=="rojo"){
+        divsRojos[div].style.background="red"
+    }
+}
+
+var id = document.querySelector("#encabezado")
+print(id)
+
+var claseRojo = document.querySelector("#encabezado")
+print(claseRojo)
+
+var etiqueta = document.querySelector("div")
+print(etiqueta)
