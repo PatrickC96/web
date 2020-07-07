@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Peliculas</h1>
+    <h3>Agregar Pelicula</h3>
+    <div class="box">
+        <!--para no redirigir a otra pagina-->
+        <form action="" method="POST" id="formulario" onsubmit="return false;">
+            <label for="nombre">Nombre de la Pelicula: </label><br />
+            <input type="text" name="nombre" id="nombre"><br />
+            <span id="error_nombre"></span>
+
+            <label for="anio">Año de lanzamiento de la Pelicula: </label><br />
+            <input type="text" name="anio" id="anio"><br />
+            <span id="error_anio"></span>
+
+            <label for="pais">Pais de Creacion de la Pelicula: </label><br />
+            <input type="text" name="pais" id="pais"><br />
+            <span id="error_pais"></span>
+
+            <input type="submit" value="Guardar" id="submit">
+        </form>
+    </div>
+    <h3>Mostrar Peliculas</h3>
+    <div id="tabla">
+
+    </div>    
+    <h3>Eliminar Pelicula</h3>
+    <div class="box">
+        <!--para no redirigir a otra pagina-->
+        <form action="" method="POST" id="elimina" onsubmit="return false;">
+            <label for="nombre">Nombre de la Pelicula a Eliminar: </label><br />
+            <input type="text" name="nombre" id="nombreE"><br />
+            <span id="error_nombreE"></span>
+
+            <input type="submit" value="Eliminar" id="submit">
+        </form>
+    </div>
+
+
+    <script title="text/javascript" src="deberLocal.js"></script>
+</body>
+</html>
