@@ -69,9 +69,7 @@ window.addEventListener('load', () => {
         agregarPelicula(nombre, anio, pais)
         console.log("Pelicula guardar")
         mostrarRegistos()
-        nombre.setItem=""
-        anio.innerHTML=""
-        pais.innerHTML=""
+
     })
 
     var elimina_peli = document.querySelector("#elimina")
