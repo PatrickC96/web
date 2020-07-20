@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Clientes</title>
+</head>
+<body>
+
+    <div div="tituloPrincipal">
+        <h1 class="text-center text-uppercase">Mi Floristería</h1>
+    </div>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">WEB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html" title="Inicio">INICIO</a></li>
+                <li class="nav-item"><a class="nav-link" href="somos.html" title="Inicio"> ¿Quiénes somos?</a></li>
+                <li class="nav-item"><a class="nav-link" href="clientes.html" title="Contenido"
+                        ><strong>Clientes</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html" title="Contacto"
+                        >Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="promociones.html" title="Fis"
+                        >Promociones</a></li>
+                <li class="nav-item"><a class="nav-link" href="contactos.html" title="Fis"
+                        >Contactos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+   
+        <div class="container border">
+            <h1 class="text-center text-uppercase bg-info">Registro de cliente</h1>
+            <br>
+            <form action="">
+                <div>
+                    <!--required en el input 
+                        form-control-lg para hacer mas grande el texto
+                    -->
+                    <label for="nombre">Nombre de Usuario</label>
+                    <input type="text" placeholder="Ingrese el Nombre de usuario" class="form-control" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Ingrese el Password" required>
+                </div>
+
+                <div>
+                    <label for="numero">Numero de Celular</label>
+                    <input type="number" placeholder="Ingrese el Numero" name="" id="" min="0" max="99"
+                        class="form-control" required>
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="text" placeholder="Ingrese el E-mail" class="form-control" required>
+                </div>
+                <div>
+                    <label for="date">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control">
+                </div>
+                <br>
+                <button class="btn btn-primary form-control">Enviar</button>
+            </form>
+        </div>
+    
+
+    <br>
+    <br>
+
+    <footer>
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="colorUno col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <h3>Información</h3>
+                    <div>
+                        <ul>
+                            <li>Pol&iacute;tica de tratamiento de datos</li>
+                            <li>T&eacute;rminos y condiciones</li>
+                            <li>Novedades</li>
+                            <li>Cont&aacute;ctenos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <h3>Mi cuenta </h3>
+                    <ul>
+                        <li>Informaci&oacute;n personal</li>
+                        <li>Pedidos</li>
+                        <li>Facturas de venta</li>
+                        <li>Direcciones</li>
+                        <li>Cupones de descuento</li>
+                    </ul>
+                </div>
+
+                <div class="colorUno col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <h3>Categorías</h3>
+                    <div>
+                        <ul>
+                            <li>Ocasiones</li>
+                            <li>Condolencias</li>
+                            <li>Legado eterno</li>
+                            <li>Acompa&ntilde;amiento Musical</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="colorUno col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <h3>Contáctenos</h3>
+                    <div>
+                        <ul>
+                            <li>Pedidos: +57 321 2089121</li>
+                            <li>Env&iacute;enos un correo electr&oacute;nico: pedidos@floristeriaflora.com</li>
+                            <li>Calle 70 # 33&ndash;1139 Lagos del Cacique</li>
+                            <li>Bucaramanga / Colombia</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-center">
+            <h2>Floristería</h2>
+        <p>Contactos: 09998752213
+        <h5>Desarrollado por Patrick Cabezas</h5>
+        </div>
+    </footer>
+</body>
+</html>

@@ -26,7 +26,6 @@ function sumame(numero1, numero2, sumaYmuestra, sumaPorDos){
         console.log("la suma por dos es: ",dato*2)
     }
 )
-
 */
 
 function resta(numero1,numero2){

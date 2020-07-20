@@ -34,10 +34,14 @@
                     <label for="date">Fecha de Nacimiento</label>
                     <input type="date" class="form-control" required>
                 </div>
-                <div class="form-group">
-                    <label for="genero">Genero</label>
-                    <input type="checkbox" class="form-control" type="radio" required>
-                </div>
+                <br>
+                <label for="opcion">Elige Genero</label>
+                <div class="text-center">
+                    <label class="radio-inline"><input type="radio" name="optradio" checked>Option 1</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>     
+                </div>            
+            
                 <div>
                     <label for="opcion">Elige una Opcion</label>
                     <select name="" id="opcion" class="form-control">
@@ -53,6 +57,7 @@
                     <textarea placeholder="Escriba un mensaje" name="" id="mensaje" cols="30" rows="10"
                         class="form-control"></textarea>
                 </div>
+                <!-- el archovo para sacar texto -->
                 <div>
                     <label for="archivo">Archivo</label>
                     <input type="file" class="form-control-file" id="archivo" required>
