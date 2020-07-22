@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <!-- https://bxslider.com/options/ -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.bxslider').bxSlider({
+                auto: true,
+                mode: 'fade',
+                captions: true,
+                infiniteLoop: true,
+            });
+        });
+    </script>
+
+    <title>Examen</title>
+</head>
+
+<!-- 
+    requerimientos:
+1. Maquetar una web parecida a las imágenes adjuntas con nombre "examen.png" y "examen2.png" (10 ptos.)
+2. Buscar un plugin de jQuery para hacer un slider (5 ptos.)
+3. En la sección "Inicio" mostrar un listado de 5 post almacenado en un json y mostrado dinámicamente (5 ptos.)
+4. Implementar un cambiador de temas (cambio colores y fondos de la web), utilice las imágenes del archivo adjunto. (5 ptos.)
+5. Al final de cada página web habrá un botón para subir al principio de la web haciendo una animación en el scroll automático. (5 ptos.)
+6. En cada página web mostrar el formulario de login falso que nos permita guardar en el localstorage el nombre del usuario y en el caso 
+    de que exista la “sesión” mostrarla. (5 ptos.)
+7. En la sección “Sobre mi” colocar un acordeón de jquery ui (5 ptos.)
+8. En la sección “Reloj” colocar un reloj dinámico con javascript (5 ptos.)
+9. En la sección de "Contacto" colocar un formulario de contacto con la respectiva validación (5 ptos.)
+10. En la sección "Mis amigos" procesar la información de la siguiente URL: https://rickandmortyapi.com/api/character/?page=2, como se 
+    pide a continuación: (10 ptos.)
+
+    1) Busque los tipos de "name"
+    2) Busque los tipos de "type"
+    3) Busque los tipos de "gender"
+    4) Busque los tipos de "status"
+    5) Busque los tipos de "name" de origin
+    6) Busque los tipos de "name" de location
+    7) Clasifique y cree diferentes arreglos dependiendo del type, gender, status, origin y location.
+    8) Cree un arreglo del abecedario, revisar si existe al menos un personaje con cada letra del abecedario.
+
+    Ejemplo de respuesta:
+
+    const arregloRespuesta =[
+        {
+            a:true
+        },
+        {
+            b:false
+        },
+    ];
+
+    9) Revisar si todos los personajes tienen un estatus vivo.
+    10) Calcular cuantos episodes existen de cada personaje:
+
+    Ej:
+
+    const respuesta = [
+        ...,
+        {
+            nombre:Rick Sanchez,
+            numeroEpisodios:30
+        },
+        ...
+    ]
+
+    Para entregar la solución realice lo siguiente:
+    Genere las capturas necesarias e inclúyalas en un archivo docx.
+    Ubique el documento anterior en un directorio llamado capturas.
+    Comprima todo el proyecto generado en un archivo zip.
+    El archivo comprimido debe tener el siguiente formato Apellido_Nombre_E_IB_W
+    Suba el archivo comprimido.
+
+ -->
+
+<body id="cuerpo">
+
+    <div id="paginaTotal">
+
+        <h1 class="text-uppercase" id="titulo">Examen js</h1>
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#" id="flip" title="Inicio">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="botonReloj" title="Inicio">RELOJ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="Contenido">SOBRE MI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="Contacto">MIS AMIGOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="Fis">CANTACTOS</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="clockdate" onload="startTime()">
+            <div class="clockdate-wrapper">
+              <div id="clock"></div>
+            </div>
+        </div>
+
+        <div class="container" id="panel">
+            <h2>Dark Striped Table</h2>
+                     
+            <table class="table table-dark table-striped" id="tabla">
+              <thead>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody id="tablaBody">
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>john@example.com</td>
+                </tr>
+                <tr>
+                  <td>Mary</td>
+                  <td>Moe</td>
+                  <td>mary@example.com</td>
+                </tr>
+                <tr>
+                  <td>July</td>
+                  <td>Dooley</td>
+                  <td>july@example.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <div class="bxslider">
+            <div><img src="css/img/caracol.jpg" title="caracol"></div>
+            <div><img src="css/img/cielo.jpg" title="cielo"></div>
+            <div><img src="css/img/hojas.jpg" title="hojas"></div>
+            <div><img src="css/img/rojo.jpg" title="rojos"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 text-justify">
+                <div>
+                    <h3>Prueba de titulo 1</h3>
+                    <h5>date</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptatem numquam facere! Iste,
+                        dolor. Maxime, facere! Corporis odit asperiores eaque quidem, laudantium ipsa totam facere,
+                        voluptates, ad itaque dicta rem? Error, ullam doloribus, perferendis nulla laboriosam, numquam
+                        adipisci minima exercitationem consequuntur blanditiis iure mollitia ex doloremque. Ipsa adipisci
+                        dolorum provident! Unde ducimus distinctio ratione explicabo laborum magni ad? Omnis alias
+                        distinctio quas cum asperiores. Voluptatum nisi rerum obcaecati voluptatibus suscipit quae ex
+                        accusantium? Maxime doloribus at, ad dignissimos in voluptatem magnam odit unde pariatur voluptas
+                        amet, nisi vero facere suscipit eveniet quibusdam culpa accusantium explicabo similique repellat?
+                        </p>
+                        <button id="idbutton">Leer mas</button>
+                </div>
+                <div>
+                    <h3>Prueba de titulo 2</h3>
+                    <h5>date</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptatem numquam facere! Iste,
+                        dolor. Maxime, facere! Corporis odit asperiores eaque quidem, laudantium ipsa totam facere,
+                        voluptates, ad itaque dicta rem? Error, ullam doloribus, perferendis nulla laboriosam, numquam
+                        adipisci minima exercitationem consequuntur blanditiis iure mollitia ex doloremque. Ipsa adipisci
+                        dolorum provident! Unde ducimus distinctio ratione explicabo laborum magni ad? Omnis alias
+                        distinctio quas cum asperiores. Voluptatum nisi rerum obcaecati voluptatibus suscipit quae ex
+                        accusantium? Maxime doloribus at, ad dignissimos in voluptatem magnam odit unde pariatur voluptas
+                        amet, nisi vero facere suscipit eveniet quibusdam culpa accusantium explicabo similique repellat?
+                        </p>
+                        <button id="idbutton">Leer mas</button>
+                </div><div>
+                    <h3>Prueba de titulo 3</h3>
+                    <h5>date</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptatem numquam facere! Iste,
+                        dolor. Maxime, facere! Corporis odit asperiores eaque quidem, laudantium ipsa totam facere,
+                        voluptates, ad itaque dicta rem? Error, ullam doloribus, perferendis nulla laboriosam, numquam
+                        adipisci minima exercitationem consequuntur blanditiis iure mollitia ex doloremque. Ipsa adipisci
+                        dolorum provident! Unde ducimus distinctio ratione explicabo laborum magni ad? Omnis alias
+                        distinctio quas cum asperiores. Voluptatum nisi rerum obcaecati voluptatibus suscipit quae ex
+                        accusantium? Maxime doloribus at, ad dignissimos in voluptatem magnam odit unde pariatur voluptas
+                        amet, nisi vero facere suscipit eveniet quibusdam culpa accusantium explicabo similique repellat?
+                        </p>
+                        <button id="idbutton">Leer mas</button>
+                </div><div>
+                    <h3>Prueba de titulo 4</h3>
+                    <h5>date</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptatem numquam facere! Iste,
+                        dolor. Maxime, facere! Corporis odit asperiores eaque quidem, laudantium ipsa totam facere,
+                        voluptates, ad itaque dicta rem? Error, ullam doloribus, perferendis nulla laboriosam, numquam
+                        adipisci minima exercitationem consequuntur blanditiis iure mollitia ex doloremque. Ipsa adipisci
+                        dolorum provident! Unde ducimus distinctio ratione explicabo laborum magni ad? Omnis alias
+                        distinctio quas cum asperiores. Voluptatum nisi rerum obcaecati voluptatibus suscipit quae ex
+                        accusantium? Maxime doloribus at, ad dignissimos in voluptatem magnam odit unde pariatur voluptas
+                        amet, nisi vero facere suscipit eveniet quibusdam culpa accusantium explicabo similique repellat?
+                        </p>
+                        <button id="idbutton">Leer mas</button>
+                </div><div>
+                    <h3>Prueba de titulo 5</h3>
+                    <h5>date</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptatem numquam facere! Iste,
+                        dolor. Maxime, facere! Corporis odit asperiores eaque quidem, laudantium ipsa totam facere,
+                        voluptates, ad itaque dicta rem? Error, ullam doloribus, perferendis nulla laboriosam, numquam
+                        adipisci minima exercitationem consequuntur blanditiis iure mollitia ex doloremque. Ipsa adipisci
+                        dolorum provident! Unde ducimus distinctio ratione explicabo laborum magni ad? Omnis alias
+                        distinctio quas cum asperiores. Voluptatum nisi rerum obcaecati voluptatibus suscipit quae ex
+                        accusantium? Maxime doloribus at, ad dignissimos in voluptatem magnam odit unde pariatur voluptas
+                        amet, nisi vero facere suscipit eveniet quibusdam culpa accusantium explicabo similique repellat?
+                        </p>
+                        <button id="idbutton">Leer mas</button>
+                </div>
+                
+
+                
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-justify">
+                
+                <h3 class="text-center">Quines somos?</h3>
+                <img src="css/img/caracol.jpg" alt="" width="100%" >
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet impedit nobis aliquid nam atque dolorum, neque eaque recusandae sapiente error.</p>
+                
+                <div class="container border">
+                    <h3 class="text-center">Identificate</h3>
+                    <br>
+                    <form action="">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" placeholder="Ingrese el Nombre" class="form-control" required>
+                        </div>
+                        <div>
+                            <label for="email">Correo</label>
+                            <input type="text" placeholder="Ingrese el E-mail" class="form-control" required>
+                        </div>
+                        <div>
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" placeholder="Ingrese el Password" required>
+                        </div>
+        
+                        <br>
+                        <button class="btn btn-primary form-control" id="idbutton">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="btn-group-vertical" id='flotante' >
+        <button type="button" class="btn btn-success" id="btnVerde"></button>
+        <button type="button" class="btn btn-danger" id="btnRojo"> </button>
+        <button type="button" class="btn btn-primary" id="btnAzul"></button>
+    </div>
+
+    <footer class="footer-" id="arriba">       
+        Aplicaciones Web  © 
+        <h4>Arriba</h4>
+    </footer>
+
+    <div id="base"></div>
+
+
+    <script src="js/inicio.js"></script>
+</body>
+
+</html>
