@@ -225,7 +225,61 @@ function enviarRegistos() {
 //         },
 //         ...
 // ]
+const botonGet = document.getElementById('botonGet')
+botonGet.addEventListener('click',()=>{
+    llamarGET()
+})
+// function llamarGET(){
+//     fetch('https://rickandmortyapi.com/api/character/?page=2')
+//     .then(res=> res.ok ? Promise.resolve(res):Promise.reject(res))
+//     .then(res=>res.json())
+//     .then(res => {
+//         console.log(res['name'])
+//         // const list = document.getElementById('')
+//         // const fragment = document.createDocumentFragment()
+//         // for(const userInfo of res){
+//         //     // const listItem = document.createElement('li')
+//         //     // listItem.textContent = '${userInfo.name}'
+//         //     console.log(userInfo)
+//         // }
+//     })
+// }
 
-function getUsuarios(){
-    return fetch('https://rickandmortyapi.com/api/character/?page=2')
+
+
+
+
+function llamarGET(){
+    fetch('https://rickandmortyapi.com/api/character/?page=2')
+    .then(res=>res.json())
+    .then(res => {listadoUsuario(res)})
 }
+
+function listadoUsuario(usuarios){
+    usuarios.map((data,i)=>{
+        let nombre=document.createElement('h3');
+        nombre.innerHTML=i+". "+data.name+" - "+data.username+" - "+data.address.city;
+        // div_usuarios.appendChild(nombre);
+        console.log(nombre.value)
+        //para ocultar cuando los datos ayan sido cargados. interesante
+        //document.querySelector(".loading").style.display='none'
+    })
+}
+
+
+
+// sclol 
+
+$(document).ready(function() {
+    $('#arriba').click(function() {
+      var destino = $(this.hash);
+      if (destino.length == 0) {
+        destino = $('#titulo');
+      }
+      if (destino.length == 0) {
+        destino = $('html');
+      }
+      $('html, body').animate({ scrollTop: destino.offset().top }, 2000);
+      return false;
+    });
+  });

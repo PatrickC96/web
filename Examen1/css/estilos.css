@@ -88,3 +88,24 @@
 #accionAcordion{
     display: none;
 }
+
+
+
+/* //solidcolor */
+
+#uno {
+    background-color: red;
+    height: 300px;
+  }
+  #dos {
+    background-color: steelblue;
+    height: 300px;
+  }
+  @keyframes color{
+    from {
+      background-color: tomato;
+    }
+    to {
+      background-color: orange;
+    }
+  }
