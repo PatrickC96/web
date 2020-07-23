@@ -228,6 +228,7 @@ function enviarRegistos() {
 const botonGet = document.getElementById('botonGet')
 botonGet.addEventListener('click',()=>{
     llamarGET()
+    //bucarGet('Aqua Morty')
 })
 // function llamarGET(){
 //     fetch('https://rickandmortyapi.com/api/character/?page=2')
@@ -246,26 +247,49 @@ botonGet.addEventListener('click',()=>{
 // }
 
 
-
+function bucarGet(nombre){
+    fetch('https://rickandmortyapi.com/api/character/?page=2')
+    .then(res=>res.json())
+    .then(res => {buscarNombre(res['results'],nombre)})
+}
 
 
 function llamarGET(){
     fetch('https://rickandmortyapi.com/api/character/?page=2')
     .then(res=>res.json())
-    .then(res => {listadoUsuario(res)})
+    .then(res => {clasificarStatus(res['results'])})
 }
 
 function listadoUsuario(usuarios){
-    usuarios.map((data,i)=>{
-        let nombre=document.createElement('h3');
-        nombre.innerHTML=i+". "+data.name+" - "+data.username+" - "+data.address.city;
-        // div_usuarios.appendChild(nombre);
-        console.log(nombre.value)
-        //para ocultar cuando los datos ayan sido cargados. interesante
-        //document.querySelector(".loading").style.display='none'
-    })
+    for(const unserInfo of usuarios){
+        console.log(unserInfo['name'],unserInfo['type'],unserInfo['gender'],unserInfo['status'],unserInfo['origin']['name'],unserInfo['location']['name'])
+    }
+}
+function buscarNombre(usuarios,nombre){
+    for(const unserInfo of usuarios){
+        if(unserInfo['name']==nombre){
+            console.log("se encontro nombre")
+        }
+    }
+
 }
 
+function clasificarStatus(usuarios){
+    var Alive=0
+    var dead =0
+    var otros=0
+
+    for(const unserInfo of usuarios){
+        if(unserInfo['status']=='Alive'){
+            Alive++
+        }else if(unserInfo['status']=='Dead'){
+            dead++
+        }else{
+            otros++
+        }
+    }
+    console.log('vivos: ',Alive,' dead: ',dead,' otros ',otros)
+}
 
 
 // sclol 
