@@ -80,3 +80,11 @@
     bottom:320px;
     left: 0px;
 }
+
+/* acordion  */
+#accordion-1{font-size: 14px; 
+}
+
+#accionAcordion{
+    display: none;
+}
