@@ -76,7 +76,7 @@ getUsuarios()
 function getUsuarios(){
     return fetch('https://jsonplaceholder.typicode.com/users')
 }
-
+  
 function getUsuarioErvin(){
     return fetch('https://reqres.in/api/users?page=2')
 }

@@ -29,33 +29,51 @@ button.addEventListener('click',()=>{
     }
 })
 
-
+//tabal qeu carga los datos desde json
 const tabla = document.getElementById('tablaBody')
 var tablaj=document.createElement('tbody')
 //parte de inicio
 $(document).ready(function(){
     $("#flip").click(function(){
-
         var elementosJson=[
-            {nombre:"Carlos",edad:20,pais:"USA"},
-            {nombre:"Carlos",edad:20,pais:"USA"},
-            {nombre:"Carlos",edad:20,pais:"USA"},
-            {nombre:"Carlos",edad:20,pais:"USA"},
-            {nombre:"Carlos",edad:20,pais:"USA"},
-            {nombre:"Carlos",edad:20,pais:"USA"}
+            {nombre:"Carlos",apelido:"Garcia",email:"john@example.com"},
+            {nombre:"Carlos",apelido:"Garcia",email:"john@example.com"},
+            {nombre:"Carlos",apelido:"Garcia",email:"john@example.com"},
+            {nombre:"Carlos",apelido:"Garcia",email:"john@example.com"},
+            {nombre:"Carlos",apelido:"Garcia",email:"john@example.com"},
+            {nombre:"Carlos",apelido:"Garcia",email:"john@example.com"}
         ]
+        
         for(index in elementosJson){
+            console.log(elementosJson[index].nombre)
             var elementtr = document.createElement("tr")
-            var elementtd = document.createElement("td")
-            elementtd.append("index['nombre']")
-            elementtd.append(index[1])
-            elementtd.append(index[2])
-            elementtr.append(elementtd)            
+            var elementtd1 = document.createElement("td")
+            var elementtd2 = document.createElement("td")
+            var elementtd3 = document.createElement("td")
+            elementtd1.append(elementosJson[index].nombre)
+            elementtd2.append(elementosJson[index].apelido)
+            elementtd3.append(elementosJson[index].email)
+            elementtr.append(elementtd1)
+            elementtr.append(elementtd2)  
+            elementtr.append(elementtd3)           
             tablaj.append(elementtr)
         }
         tabla.append(tablaj)
       $("#panel").slideToggle("slow");
     });
+//scroll
+
+    $('#arriba').click(function() {
+        var destino = $(this.hash);
+        if (destino.length == 0) {
+          destino = $('#titulo');
+        }
+        if (destino.length == 0) {
+          destino = $('html');
+        }
+        $('html, body').animate({ scrollTop: destino.offset().top }, 2000);
+        return false;
+      });
 });
 
 
@@ -196,7 +214,7 @@ function enviarRegistos() {
 //     2) Busque los tipos de "type"
 //     3) Busque los tipos de "gender"
 //     4) Busque los tipos de "status"
-//     5) Busque los tipos de "name" de origin
+//     5) Busque los tipos de "name" de origin originName 
 //     6) Busque los tipos de "name" de location
 //     7) Clasifique y cree diferentes arreglos dependiendo del type, gender, status, origin y location.
 //     8) Cree un arreglo del abecedario, revisar si existe al menos un personaje con cada letra del abecedario.
@@ -226,59 +244,164 @@ function enviarRegistos() {
 //         ...
 // ]
 const botonGet = document.getElementById('botonGet')
+var elementoBR=document.createElement('br')
+
+
 botonGet.addEventListener('click',()=>{
-    llamarGET()
+    $("#activaAmigos").slideToggle("slow");
+    //llamarGET()
     //bucarGet('Aqua Morty')
 })
-// function llamarGET(){
-//     fetch('https://rickandmortyapi.com/api/character/?page=2')
-//     .then(res=> res.ok ? Promise.resolve(res):Promise.reject(res))
-//     .then(res=>res.json())
-//     .then(res => {
-//         console.log(res['name'])
-//         // const list = document.getElementById('')
-//         // const fragment = document.createDocumentFragment()
-//         // for(const userInfo of res){
-//         //     // const listItem = document.createElement('li')
-//         //     // listItem.textContent = '${userInfo.name}'
-//         //     console.log(userInfo)
-//         // }
-//     })
-// }
-
-
-function bucarGet(nombre){
+// 'Aqua Morty'
+// mostrarAmigos
+const mostrarAmigos = document.getElementById('mostrarAmigos')
+//buscar por nombre
+const b_bontonNombre = document.getElementById('b_bontonNombre')
+const inputnombre = document.getElementById('inputNombre')
+b_bontonNombre.addEventListener('click',()=>{
+    mostrarAmigos.innerText=""
     fetch('https://rickandmortyapi.com/api/character/?page=2')
     .then(res=>res.json())
-    .then(res => {buscarNombre(res['results'],nombre)})
-}
+    .then(res => {
+        nombre= inputnombre.value
+    var usuarios= res['results']
+    var estado = false;
+    for(const unserInfo of usuarios){
+        if(unserInfo['name']==nombre){
+            mostrarAmigos.append("Si encontro el elemetos")
+            estado= true
+        }
+    }
+    if(!estado){
+        mostrarAmigos.append("No existe elemento")
+    }    
+})
+})
+//buscar por type
+const b_bontonTipo = document.getElementById('b_bontonTipo')
+const inputTipo = document.getElementById('inputTipo')
+b_bontonTipo.addEventListener('click',()=>{
+    mostrarAmigos.innerText=""
+    fetch('https://rickandmortyapi.com/api/character/?page=2')
+    .then(res=>res.json())
+    .then(res => {
+        nombre= inputTipo.value
+    var usuarios= res['results']
+    var estado = false;
+    for(const unserInfo of usuarios){
+        if(unserInfo['type']==nombre){
+            mostrarAmigos.append("Si encontro el elemetos typo: "+ unserInfo['name'])
+            mostrarAmigos.append(elementoBR)
+            estado= true
+        }
+    }
+    if(!estado){
+        mostrarAmigos.append("No existe elemento")
+    }    
+})
+})
+const b_bontongender = document.getElementById('b_bontongender')
+const inputgender = document.getElementById('inputgender')
+b_bontongender.addEventListener('click',()=>{
+    mostrarAmigos.innerText=""
+    fetch('https://rickandmortyapi.com/api/character/?page=2')
+    .then(res=>res.json())
+    .then(res => {
+        nombre= inputgender.value
+    var usuarios= res['results']
+    var estado = false;
+    for(const unserInfo of usuarios){
+        if(unserInfo['gender']==nombre){
+            mostrarAmigos.append("Si encontro el elemetos typo: "+ unserInfo['name'])
+            mostrarAmigos.append(elementoBR)
+            estado= true
+        }
+    }
+    if(!estado){
+        mostrarAmigos.append("No existe elemento")
+    }    
+})
+})
 
+const b_bontonstatus = document.getElementById('b_bontonstatus')
+const inputstatus = document.getElementById('inputstatus')
+b_bontonstatus.addEventListener('click',()=>{
+    mostrarAmigos.innerText=""
+    fetch('https://rickandmortyapi.com/api/character/?page=2')
+    .then(res=>res.json())
+    .then(res => {
+        nombre= inputstatus.value
+    var usuarios= res['results']
+    var estado = false;
+    for(const unserInfo of usuarios){
+        if(unserInfo['status']==nombre){
+            mostrarAmigos.append("Si encontro el elemetos typo: "+ unserInfo['name'])
+            mostrarAmigos.append(elementoBR)
+            estado= true
+        }
+    }
+    if(!estado){
+        mostrarAmigos.append("No existe elemento")
+    }    
+})
+})
+const b_bontonoriginName = document.getElementById('b_bontonoriginName')
+const inputoriginName = document.getElementById('inputoriginName')
+b_bontonoriginName.addEventListener('click',()=>{
+    mostrarAmigos.innerText=""
+    fetch('https://rickandmortyapi.com/api/character/?page=2')
+    .then(res=>res.json())
+    .then(res => {
+        nombre= inputoriginName.value
+    var usuarios= res['results']
+    var estado = false;
+    for(const unserInfo of usuarios){
+        if(unserInfo['origin']['name']==nombre){
+            mostrarAmigos.append("Si encontro el elemetos typo: "+ unserInfo['name'])
+            mostrarAmigos.append(elementoBR)
+            estado= true
+        }
+    }
+    if(!estado){
+        mostrarAmigos.append("No existe elemento")
+    }    
+})
+})
 
-function llamarGET(){
+const b_bontonlocationName = document.getElementById('b_bontonlocationName')
+const inputlocationName = document.getElementById('inputlocationName')
+b_bontonoriginName.addEventListener('click',()=>{
+    mostrarAmigos.innerText=""
+    fetch('https://rickandmortyapi.com/api/character/?page=2')
+    .then(res=>res.json())
+    .then(res => {
+        nombre= inputlocationName.value
+    var usuarios= res['results']
+    var estado = false;
+    for(const unserInfo of usuarios){
+        if(unserInfo['location']['name']==nombre){
+            mostrarAmigos.append("Si encontro el elemetos typo: "+ unserInfo['name'])
+            mostrarAmigos.append(elementoBR)
+            estado= true
+        }
+    }
+    if(!estado){
+        mostrarAmigos.append("No existe elemento")
+    }    
+})
+})
+const b_bontonClasificarusuario = document.getElementById('b_bontonClasificarusuario')
+b_bontonClasificarusuario.addEventListener('click',()=>{
     fetch('https://rickandmortyapi.com/api/character/?page=2')
     .then(res=>res.json())
     .then(res => {clasificarStatus(res['results'])})
-}
-
-function listadoUsuario(usuarios){
-    for(const unserInfo of usuarios){
-        console.log(unserInfo['name'],unserInfo['type'],unserInfo['gender'],unserInfo['status'],unserInfo['origin']['name'],unserInfo['location']['name'])
-    }
-}
-function buscarNombre(usuarios,nombre){
-    for(const unserInfo of usuarios){
-        if(unserInfo['name']==nombre){
-            console.log("se encontro nombre")
-        }
-    }
-
-}
-
+})
+//clasificar status usuarios
 function clasificarStatus(usuarios){
     var Alive=0
     var dead =0
     var otros=0
-
+    mostrarAmigos.innerText=""
     for(const unserInfo of usuarios){
         if(unserInfo['status']=='Alive'){
             Alive++
@@ -288,22 +411,7 @@ function clasificarStatus(usuarios){
             otros++
         }
     }
-    console.log('vivos: ',Alive,' dead: ',dead,' otros ',otros)
+    mostrarAmigos.append('Alive: ',Alive,' Dead: ',dead,' otros ',otros)
+
 }
 
-
-// sclol 
-
-$(document).ready(function() {
-    $('#arriba').click(function() {
-      var destino = $(this.hash);
-      if (destino.length == 0) {
-        destino = $('#titulo');
-      }
-      if (destino.length == 0) {
-        destino = $('html');
-      }
-      $('html, body').animate({ scrollTop: destino.offset().top }, 2000);
-      return false;
-    });
-  });
