@@ -1,0 +1,2 @@
+ingresar al directorio donde se desea generar el nuevo poryecto
+ng new aprendiendo-angular

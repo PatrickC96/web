@@ -1,0 +1,10 @@
+<h2>{{titulo}}</h2>
+<p>Añadir marca
+    <input type="text"/>
+    <button >Mostrar marca</button>
+    <button >Añadir marca</button>
+</p>
+<p>Las zapatillas que tenemos disponible son: </p>
+<ul *ngFor="let deportiva of zapatillas">
+    <li>{{deportiva.marca}} - {{deportiva.precio}}</li>
+</ul>
