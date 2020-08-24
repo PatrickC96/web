@@ -18,12 +18,47 @@ export class ZapatillasComponent implements OnInit {
     private _zapatillaService: ZapatillaService
   ){
     this.miMarca="Nike";
-    this.color='red';
+    this.color='orange';
+    this.marcas=new Array();
   }
 
     ngOnInit(){
       this.zapatillas=this._zapatillaService.getZapatillas();
       console.log(this.zapatillas);
-
+      this.getMarcas();
     }
+
+    getMarcas(){
+      this.zapatillas.forEach((zapatilla, index)=>{
+        //eliminar duplicados
+        if(this.marcas.indexOf(zapatilla.marca)<0){
+          this.marcas.push(zapatilla.marca);
+        }
+        console.log(index);
+      });
+      console.log(this.marcas);
+    }
+
+    onBlur(){
+      console.log("Has salido del input");
+    }
+
+    mostrarPalabra(){//capturar enter
+      alert(this.miMarca);
+    }
+
+    getMarca(){
+      alert(this.miMarca);
+    }
+
+    addMarca(){
+      this.marcas.push(this.miMarca);
+    }
+
+    borrarMarca(index){
+      //delete this.marcas[index];//borra pero lo convierte en undefinded
+      this.marcas.splice(index,1);//le paso el indice a borrar y a partir de este borrar 1 elemento
+    }
+
+
 }
