@@ -1,7 +1,6 @@
-export var Configuracion={
-//export para importar esta variable y utilizarla en algun componente
-    color: "red",
-    fondo: "#ccc",
-    titulo: "Aplicacion en angular",
-    descripcion: "Aprendiendo angular"
-}
+export var Configuracion={//con export puede importarlo en cualquier funcion variable componente o archivo de la app
+  color: "red",
+  fondo: "#ccc",
+  titulo: "Aplicacion angular",
+  descripcion: "Aprendiendo angular"
+};

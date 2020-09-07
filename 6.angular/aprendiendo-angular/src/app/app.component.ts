@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
 import { Configuracion } from './models/configuracion';
-
+//decorador funcionalidad de una clase para modificar el comportamiento
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html',//ubicacion del html
+  styleUrls: ['./app.component.css']//hojas de estidos especificos
 })
+//export como sera llamado el componente por otros
 export class AppComponent {
-  title = 'Aprendiendo-angular';
+  title = 'Aprendiendo angular';
   public descripcion:string;
-  public mostrarVideojuego:boolean=true;
+  public mostrarVideojuegos:boolean=true;
   public config;
 
-  constructor(){
+  constructor() {
     this.title=Configuracion.titulo;
     this.descripcion=Configuracion.descripcion;
     this.config=Configuracion;
   }
 
-  ocultarVideojuego(value){
-    this.mostrarVideojuego=value;
+  ocultarVideoJuegos(value){
+    this.mostrarVideojuegos=value;
   }
 }

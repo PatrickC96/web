@@ -1,21 +1,23 @@
-export class Zapatilla{
-/*  public nombre:string;
-    public marca:string;
-    public color:string;
-    public precio:number;
-    public stock:boolean;
+export class  Zapatilla {
+ /* public nombre:string;
+  public marca:string;
+  public color:string;
+  public precio:number;
+  public stock:boolean;
 
-    constructor(nombre, marca, color, precio, stock){
-        this.nombre=nombre;
-        this.marca=marca;
-        this.color=color;
-        this.precio=precio;
-        this.stock=stock;
-    }*/
-    constructor(
-        public marca:string,
-        public color:string,
-        public precio:number,
-        public stock:boolean,
-    ){}
+  constructor(nombre, marca,color,precio,stock) {
+    this.nombre=nombre;
+    this.marca=marca;
+    this.color=color;
+    this.precio=precio;
+    this.stock=stock;
+  }*/
+
+ //lo mismo que lo anterior
+  constructor(
+  public marca:string,
+  public color:string,
+  public precio:number,
+  public stock:boolean
+){}
 }

@@ -1,2 +1,42 @@
 {{fecha | date:'dd/MM/yyyy'}}
+<br/>
 {{fecha | date:'fullDate' | uppercase}}
+<!--pipe | 'fullDate' podemos utilizar esto o las de js o con moment js-->
+<br/>
+{{' HOLA MUNDO USANDO PIPES' | lowercase}}
+<br/>
+{{4 | calculadora: 2}} <!--pipe personalizada-->
+<hr>
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargaUsuario()"/>
+<div *ngIf="!user">
+  Cargando...
+</div>
+<div *ngIf="user">
+  <img src="{{user.avatar}}" width="200px" />
+  <h2>{{user.first_name + ' ' + user.last_name}}</h2>
+</div>
+<hr>
+<h2>Crear Usuario</h2>
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)"> <!--para convertir en formulario de angular-->
+  <label for="name">Nombre</label>
+  <br/>
+  <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" required/>
+  <span *ngIf="name.touched && !name.valid">
+      El nombre es obligatorio
+  </span>
+  <br/>
+
+  <label for="job">Trabajo</label>
+  <br/>
+  <input type="text" name="job" #job="ngModel" [(ngModel)]="new_user.job" required/>
+  <span *ngIf="job.touched && !job.valid">
+      El trabajo es obligatorio
+  </span>
+  <br/>
+  <input type="submit" value="Guardar usuario" [disabled]="!newUser.form.valid"/>
+</form>
+<div *ngIf="usuario_guardado">
+  <h2>El usuario se ha guardado correctamente</h2>
+  <h3>{{usuario_guardado.name}}</h3>
+  <h3>{{usuario_guardado.job}}</h3>
+</div>

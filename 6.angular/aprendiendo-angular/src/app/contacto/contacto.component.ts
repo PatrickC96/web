@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactoUsuario } from '../models/contacto.usuario';
+import { ContactoUsuario } from "../models/contacto.usuario";
 
 @Component({
-  selector: 'contacto',
+  selector: 'app-contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
@@ -10,7 +10,7 @@ export class ContactoComponent implements OnInit {
   public contacto_usuario:ContactoUsuario;
   public show_data;
 
-  constructor() { 
+  constructor() {
     this.contacto_usuario=new ContactoUsuario('','','','');
   }
 
@@ -18,7 +18,9 @@ export class ContactoComponent implements OnInit {
   }
 
   onSubmit(form){
-    this.show_data=this.contacto_usuario;
+    this.show_data=this.contacto_usuario
+    //console.log("Evento submit lanzado");
+    //console.log(this.contacto_usuario);
     console.log(this.show_data);
     form.reset();
   }
