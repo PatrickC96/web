@@ -1,0 +1,17 @@
+###
+GET http://localhost:3000/api/employees
+
+
+###
+POST http://localhost:3000/api/employees
+Content-Type: application/json
+
+{
+    "name":"pablo",
+    "position":"limpieza",
+    "office":"3",
+    "salary":"10"    
+}
+
+###
+GET http://localhost:3000/api/employees/5f6942b195ebe9193e292d04
